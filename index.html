@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avatar Game Assets - 3D Skin & Elixir Showcase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at 50% 0%, #1e1e2f 0%, #0c0d14 100%);
+      color: #f0f3f8;
+      min-height: 100vh;
+      padding: 32px 20px 80px;
+    }
+    header { max-width: 1200px; margin: 0 auto 36px; text-align: center; }
+    .badge {
+      display: inline-block;
+      padding: 6px 14px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: rgba(99, 102, 241, 0.15);
+      color: #a5b4fc;
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      border-radius: 9999px;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: 38px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #ffffff 40%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+    }
+    p.subtitle { color: #94a3b8; font-size: 16px; max-width: 600px; margin: 0 auto 28px; }
+    .controls {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
+    }
+    .search-box { flex: 1; min-width: 240px; }
+    input[type="text"] {
+      width: 100%;
+      padding: 12px 18px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      color: #ffffff;
+      font-size: 15px;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+    input[type="text"]:focus {
+      border-color: #6366f1;
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+    }
+    .tab-group {
+      display: flex;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 4px;
+      gap: 4px;
+    }
+    .tab-btn {
+      padding: 8px 18px;
+      border: none;
+      background: transparent;
+      color: #94a3b8;
+      font-weight: 600;
+      font-size: 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.18s ease;
+    }
+    .tab-btn.active {
+      background: #6366f1;
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.35);
+    }
+    .stats { color: #64748b; font-size: 13px; margin-top: 14px; }
+    .grid {
+      max-width: 1280px;
+      margin: 40px auto 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 18px;
+      padding: 16px;
+      text-align: center;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(99, 102, 241, 0.5);
+      background: rgba(255, 255, 255, 0.06);
+      box-shadow: 0 16px 32px rgba(0, 0, 0, 0.4), 0 0 24px rgba(99, 102, 241, 0.2);
+    }
+    .img-wrap {
+      width: 100%;
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.03) 0%, transparent 70%);
+      margin-bottom: 12px;
+    }
+    .img-wrap img {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+      filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.5));
+      transition: transform 0.3s ease;
+    }
+    .card:hover .img-wrap img { transform: scale(1.08); }
+    .card-title {
+      font-weight: 700;
+      font-size: 15px;
+      color: #ffffff;
+      margin-bottom: 4px;
+      text-transform: capitalize;
+    }
+    .card-id {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 11px;
+      color: #64748b;
+      margin-bottom: 12px;
+    }
+    .copy-btn {
+      width: 100%;
+      padding: 8px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.04);
+      color: #cbd5e1;
+      font-size: 12px;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .copy-btn:hover {
+      background: #6366f1;
+      border-color: #6366f1;
+      color: #ffffff;
+    }
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #10b981;
+      color: #ffffff;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      box-shadow: 0 10px 25px rgba(16, 185, 129, 0.35);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.25s ease;
+      pointer-events: none;
+      z-index: 1000;
+    }
+    .toast.show { opacity: 1; transform: translateY(0); }
+    .empty {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 60px 20px;
+      color: #64748b;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="badge">Avatar RPG • 3D Asset Gallery</div>
+    <h1>Game Skins & Elixir Showcase</h1>
+    <p class="subtitle">Complete catalog of 3D characters and consumables with transparent backgrounds.</p>
+    
+    <div class="controls">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search by name or asset ID...">
+      </div>
+      <div class="tab-group">
+        <button class="tab-btn active" data-filter="all">All (72)</button>
+        <button class="tab-btn" data-filter="skins">Skins (59)</button>
+        <button class="tab-btn" data-filter="elixirs">Elixirs (13)</button>
+      </div>
+    </div>
+    <div class="stats" id="stats">Displaying 72 assets</div>
+  </header>
+
+  <main class="grid" id="assetGrid"></main>
+
+  <div class="toast" id="toast">Copied GitHub Raw URL!</div>
+
+  <script>
+    const RAW_BASE = "https://raw.githubusercontent.com/horlapookie/avatar-img/main";
+    const SKINS = ["a_train", "aang", "air_monk_battle", "azula", "black_noir", "bolin", "boulder_beast", "boulder_crusher", "cloud_dancer", "combustion_man", "comet_rider", "crimson_phoenix", "crystal_weaver", "dragon_disciple", "dragon_lord", "earth_brawler", "earth_colossus", "ember_blade", "fire_dancer", "flame_empress", "frostbite", "gale_force", "heavenly_predicament_skin", "homelander", "ice_maiden", "inferno_king", "inferno_lord", "iroh", "iron_fist", "iron_monk", "katara", "king_bumi", "korra", "kyoshi", "lava_lord", "monk_gyatso", "moon_spirit_warrior", "ocean_empress", "pakku", "rain_dancer", "roku", "sand_queen", "seismic_striker", "sky_nomad", "solar_flare", "solar_phoenix", "spiderman", "starlight", "stone_guardian", "stone_titan", "storm_sister", "terrakin", "tide_walker", "toph", "void_monk", "volcano_spirit", "wind_phantom", "zaheer", "zuko"];
+    const ELIXIRS = ["avatar_elixir", "chi_fragment", "chi_potion", "dragon_brew", "earth_elixir", "lion_turtle", "monk_elixir", "moon_elixir", "spirit_drop", "spirit_dust", "spirit_ember", "training_grain", "world_cup_elixir"];
+
+    const assets = [
+      ...SKINS.map(id => ({ id, type: "skin", path: "skins/" + id + ".png", name: id.replace(/_/g, " ") })),
+      ...ELIXIRS.map(id => ({ id, type: "elixir", path: "elixir/" + id + ".png", name: id.replace(/_/g, " ") }))
+    ];
+
+    let currentFilter = "all";
+    let searchQuery = "";
+
+    const grid = document.getElementById("assetGrid");
+    const stats = document.getElementById("stats");
+    const searchInput = document.getElementById("searchInput");
+    const tabBtns = document.querySelectorAll(".tab-btn");
+    const toast = document.getElementById("toast");
+
+    function render() {
+      const filtered = assets.filter(item => {
+        const matchesType = currentFilter === "all" || 
+          (currentFilter === "skins" && item.type === "skin") ||
+          (currentFilter === "elixirs" && item.type === "elixir");
+        
+        const q = searchQuery.toLowerCase().trim();
+        const matchesSearch = !q || item.id.toLowerCase().includes(q) || item.name.toLowerCase().includes(q);
+
+        return matchesType && matchesSearch;
+      });
+
+      stats.textContent = "Displaying " + filtered.length + " asset" + (filtered.length === 1 ? "" : "s");
+
+      if (filtered.length === 0) {
+        grid.innerHTML = '<div class="empty">No matching assets found. Try a different search term.</div>';
+        return;
+      }
+
+      grid.innerHTML = filtered.map(item => {
+        const rawUrl = RAW_BASE + "/" + item.path;
+        return `
+          <div class="card">
+            <div class="img-wrap">
+              <img src="${rawUrl}" alt="${item.name}" loading="lazy">
+            </div>
+            <div class="card-title">${item.name}</div>
+            <div class="card-id">${item.id}</div>
+            <button class="copy-btn" onclick="copyUrl('${rawUrl}')">Copy Raw URL</button>
+          </div>
+        `;
+      }).join("");
+    }
+
+    function copyUrl(url) {
+      navigator.clipboard.writeText(url).then(() => {
+        toast.classList.add("show");
+        setTimeout(() => toast.classList.remove("show"), 2000);
+      });
+    }
+
+    searchInput.addEventListener("input", (e) => {
+      searchQuery = e.target.value;
+      render();
+    });
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        tabBtns.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        currentFilter = btn.dataset.filter;
+        render();
+      });
+    });
+
+    render();
+  </script>
+</body>
+</html>
