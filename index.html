@@ -201,12 +201,12 @@
         <input type="text" id="searchInput" placeholder="Search by name or asset ID...">
       </div>
       <div class="tab-group">
-        <button class="tab-btn active" data-filter="all">All (72)</button>
-        <button class="tab-btn" data-filter="skins">Skins (59)</button>
+        <button class="tab-btn active" data-filter="all">All (76)</button>
+        <button class="tab-btn" data-filter="skins">Skins (63)</button>
         <button class="tab-btn" data-filter="elixirs">Elixirs (13)</button>
       </div>
     </div>
-    <div class="stats" id="stats">Displaying 72 assets</div>
+    <div class="stats" id="stats">Displaying 76 assets</div>
   </header>
 
   <main class="grid" id="assetGrid"></main>
@@ -215,7 +215,7 @@
 
   <script>
     const RAW_BASE = "https://raw.githubusercontent.com/horlapookie/avatar-img/main";
-    const SKINS = ["a_train", "aang", "air_monk_battle", "azula", "black_noir", "bolin", "boulder_beast", "boulder_crusher", "cloud_dancer", "combustion_man", "comet_rider", "crimson_phoenix", "crystal_weaver", "dragon_disciple", "dragon_lord", "earth_brawler", "earth_colossus", "ember_blade", "fire_dancer", "flame_empress", "frostbite", "gale_force", "heavenly_predicament_skin", "homelander", "ice_maiden", "inferno_king", "inferno_lord", "iroh", "iron_fist", "iron_monk", "katara", "king_bumi", "korra", "kyoshi", "lava_lord", "monk_gyatso", "moon_spirit_warrior", "ocean_empress", "pakku", "rain_dancer", "roku", "sand_queen", "seismic_striker", "sky_nomad", "solar_flare", "solar_phoenix", "spiderman", "starlight", "stone_guardian", "stone_titan", "storm_sister", "terrakin", "tide_walker", "toph", "void_monk", "volcano_spirit", "wind_phantom", "zaheer", "zuko"];
+    const SKINS = ["a_train", "aang", "air_monk_battle", "azula", "batman", "black_noir", "bolin", "boulder_beast", "boulder_crusher", "cloud_dancer", "combustion_man", "comet_rider", "crimson_phoenix", "crystal_weaver", "dragon_disciple", "dragon_lord", "earth_brawler", "earth_colossus", "ember_blade", "fire_dancer", "flame_empress", "frostbite", "gale_force", "heavenly_predicament_skin", "homelander", "ice_maiden", "inferno_king", "inferno_lord", "iroh", "iron_fist", "iron_man", "iron_monk", "katara", "king_bumi", "korra", "kyoshi", "lava_lord", "monk_gyatso", "moon_spirit_warrior", "ocean_empress", "pakku", "rain_dancer", "roku", "sand_queen", "seismic_striker", "shazam", "sky_nomad", "solar_flare", "solar_phoenix", "spiderman", "starlight", "stone_guardian", "stone_titan", "storm_sister", "terrakin", "thor", "tide_walker", "toph", "void_monk", "volcano_spirit", "wind_phantom", "zaheer", "zuko"];
     const ELIXIRS = ["avatar_elixir", "chi_fragment", "chi_potion", "dragon_brew", "earth_elixir", "lion_turtle", "monk_elixir", "moon_elixir", "spirit_drop", "spirit_dust", "spirit_ember", "training_grain", "world_cup_elixir"];
 
     const assets = [
